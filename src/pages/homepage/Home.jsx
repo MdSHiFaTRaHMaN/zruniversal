@@ -5,6 +5,11 @@ import Services from './Services';
 import Portfolio from './Portfolio';
 import TeamSection from './TeamSection';
 import TestimonialSection from './TestimonialSection';
+import FAQSection from './FAQSection';
+import StatsSection from './StatsSection';
+import PhotoGallery from './PhotoGallery';
+import RecentPosts from './RecentPosts';
+import ContactInfo from './ContactInfo';
 
 const Home = () => {
     return (
@@ -15,6 +20,11 @@ const Home = () => {
             <Portfolio />
             <TeamSection />
             <TestimonialSection />
+            <FAQSection />
+            <StatsSection />
+            <PhotoGallery />
+            <RecentPosts />
+            <ContactInfo />
         </div>
     );
 };

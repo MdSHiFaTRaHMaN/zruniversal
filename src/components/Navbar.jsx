@@ -1,22 +1,24 @@
 import { Menu } from "antd";
 import { useState } from "react";
-import { HomeOutlined } from "@ant-design/icons";
+import { HomeOutlined, MenuOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [current, setCurrent] = useState("home");
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleClick = (e) => {
     setCurrent(e.key);
+    setMobileOpen(false); // Close mobile menu on item click
   };
 
   return (
-    <div className="bg-white shadow-md">
-      <div className=" w-full lg:w-10/12 mx-auto py-2.5 flex justify-between items-center">
+    <div className="bg-white shadow-md w-full">
+      <div className="w-full lg:w-10/12 mx-auto py-3 flex justify-between items-center px-4">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <HomeOutlined className="text-yellow-500 text-3xl" />
-          <h1 className="text-2xl font-bold text-blue-900">Znuniversal</h1>
+          <HomeOutlined className="text-yellow-500 text-2xl" />
+          <h1 className="text-2xl font-bold text-blue-900 mt-2">Znuniversal</h1>
         </div>
 
         {/* Desktop Navigation */}
@@ -34,21 +36,27 @@ const Navbar = () => {
           <Menu.Item key="contact">CONTACT</Menu.Item>
         </Menu>
 
-        {/* Mobile Menu (Hidden on larger screens) */}
-        <div className="md:hidden">
-          <Menu
-            mode="vertical"
-            className="absolute top-16 left-0 w-full bg-white shadow-lg p-4"
-          >
-            <Menu.Item key="home">
-              <Link to="/">HOME</Link>
-            </Menu.Item>
-            <Menu.Item key="service">SERVICE</Menu.Item>
-            <Menu.Item key="portfolio">PORTFOLIO</Menu.Item>
-            <Menu.Item key="contact">CONTACT</Menu.Item>
-          </Menu>
+        {/* Mobile Menu Button */}
+        <div className="md:hidden cursor-pointer" onClick={() => setMobileOpen(!mobileOpen)}>
+          <MenuOutlined className="text-2xl text-blue-900" />
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <Menu
+          onClick={handleClick}
+          mode="vertical"
+          className="md:hidden bg-white shadow-lg w-full text-center"
+        >
+          <Menu.Item key="home">
+            <Link to="/">HOME</Link>
+          </Menu.Item>
+          <Menu.Item key="service">SERVICE</Menu.Item>
+          <Menu.Item key="portfolio">PORTFOLIO</Menu.Item>
+          <Menu.Item key="contact">CONTACT</Menu.Item>
+        </Menu>
+      )}
     </div>
   );
 };
