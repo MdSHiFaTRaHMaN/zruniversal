@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import { Outlet } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Topbar from '../components/Topbar';
+import ContactInfo from '../components/ContactInfo';
 
 const Main = () => {
     return (
@@ -10,6 +11,7 @@ const Main = () => {
           <Topbar />
           <Navbar />
           <Outlet />
+          <ContactInfo />
           <Footer />
         </div>
     );

@@ -45,7 +45,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Right Features Section */}
-        <div className="relative p-[53.5px]">
+        <div className="relative p-[24px]">
           {/* Darker Background Overlay */}
           <div
             className="absolute inset-0 bg-black opacity-80"

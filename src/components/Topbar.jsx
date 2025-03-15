@@ -10,11 +10,11 @@ const Topbar = () => {
         <div className="flex flex-col md:flex-row items-center gap-0 lg:gap-5 text-sm">
           <span className="flex items-center gap-2">
             <MdEmail className="text-lg" />
-            <h3>zruniversal@gmail.com</h3>
+            <h3>universalbuildernyc@gmail.com </h3>
           </span>
           <span className="flex items-center gap-2">
             <FaPhoneAlt className="text-lg" />
-            <h3>123-456-7878</h3>
+            <h3>0646 725 4245</h3>
           </span>
         </div>
         <div className="flex items-center gap-4 mt-3 md:mt-0 text-lg">

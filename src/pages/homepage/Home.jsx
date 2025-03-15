@@ -9,7 +9,6 @@ import FAQSection from './FAQSection';
 import StatsSection from './StatsSection';
 import PhotoGallery from './PhotoGallery';
 import RecentPosts from './RecentPosts';
-import ContactInfo from './ContactInfo';
 
 const Home = () => {
     return (
@@ -24,7 +23,6 @@ const Home = () => {
             <StatsSection />
             <PhotoGallery />
             <RecentPosts />
-            <ContactInfo />
         </div>
     );
 };

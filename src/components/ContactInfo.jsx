@@ -8,14 +8,14 @@ const ContactInfo = () => {
         <div className="flex flex-col items-center">
           <FaMapMarkedAlt className="text-5xl mb-3" />
           <h3 className="text-lg font-semibold">Address</h3>
-          <p>Lane A21, ABC Street,</p>
-          <p>New York, USA.</p>
+          <p>433 Atkins Ave, Brooklyn,</p>
+          <p> NY 11208,</p>
         </div>
         <div className="flex flex-col items-center">
           <FaPhoneAlt className="text-5xl mb-3" />
           <h3 className="text-lg font-semibold">Call Us</h3>
-          <p>111-222-3333</p>
-          <p>111-222-4444</p>
+          <p>0646 725 4245</p>
+          <p> 347 307 4632</p>
         </div>
         <div className="flex flex-col items-center">
           <FaBusinessTime className="text-5xl mb-3" />
