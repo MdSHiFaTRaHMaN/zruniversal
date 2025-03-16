@@ -71,7 +71,7 @@ const Portfolio = () => {
         voluptate
       </p>
 
-      <div className="flex justify-center gap-2 my-4">
+      <div className="flex flex-wrap justify-center gap-2 my-4">
         {tab.map((item, index) => (
           <button
             key={index}
@@ -93,7 +93,7 @@ const Portfolio = () => {
         {filteredServices.map((service, index) => (
           <div
             key={index}
-            className="max-w-sm shadow-lg border overflow-hidden"
+            className="shadow-lg border overflow-hidden"
           >
             {/* Image Section */}
             <img

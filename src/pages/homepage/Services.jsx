@@ -1,4 +1,3 @@
-
 import Service1 from "../../assets/ser1.jpg";
 import Service2 from "../../assets/ser2.jpg";
 import Service3 from "../../assets/ser3.jpg";
@@ -52,31 +51,38 @@ const Services = () => {
       {/* Title */}
       <h2 className="text-3xl font-bold text-center mb-2">SERVICES</h2>
       <p className="text-center text-gray-500 mb-10 max-w-2xl mx-auto">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit Deserunt libero voluptate
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit Deserunt libero
+        voluptate
       </p>
 
       {/* Services Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((service, index) => (
-              <div key={index} className="max-w-sm shadow-lg border overflow-hidden">
-              {/* Image Section */}
-              <img
-                src={service.image} 
-                alt="Industry Training"
-                className="w-full h-48 object-cover"
-              />
-              <div className="w-full h-[4px] bg-yellow-400"></div>
-              {/* Content Section */}
-              <div className="bg-[#203B63] text-white p-6">
-                <h2 className="text-xl font-bold text-yellow-400">{service.title}</h2>
-                <p className="mt-2 text-sm">
-                  Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has. Latine propriae quo no, unum ridens.
-                </p>
-                <button className="mt-4 flex items-center gap-2 bg-yellow-400 text-blue-900 font-bold py-2 px-4 rounded hover:bg-yellow-500">
-                  Read More <MdKeyboardDoubleArrowRight />
-                </button>
-              </div>
+          <div
+            key={index}
+            className="shadow-lg border overflow-hidden"
+          >
+            {/* Image Section */}
+            <img
+              src={service.image}
+              alt="Industry Training"
+              className="w-full h-48 object-cover"
+            />
+            <div className="w-full h-[4px] bg-yellow-400"></div>
+            {/* Content Section */}
+            <div className="bg-[#203B63] text-white p-6">
+              <h2 className="text-xl font-bold text-yellow-400">
+                {service.title}
+              </h2>
+              <p className="mt-2 text-sm">
+                Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum
+                copiosae argumentum has. Latine propriae quo no, unum ridens.
+              </p>
+              <button className="mt-4 flex items-center gap-2 bg-yellow-400 text-blue-900 font-bold py-2 px-4 rounded hover:bg-yellow-500">
+                Read More <MdKeyboardDoubleArrowRight />
+              </button>
             </div>
+          </div>
         ))}
       </div>
     </div>

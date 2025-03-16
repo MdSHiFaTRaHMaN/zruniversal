@@ -4,6 +4,7 @@ import { createBrowserRouter } from "react-router-dom";
 import ServicePage from "../pages/services/ServicePage";
 import PortFolioPage from "../pages/portfolio/PortFolioPage";
 import ContactPage from "../pages/contact/ContactPage";
+import TermsAndCondition from "../pages/termsandconditions/TermsAndCondition";
 
 
 const Routes = createBrowserRouter([
@@ -26,6 +27,10 @@ const Routes = createBrowserRouter([
       {
         path: "/contact",
         element: <ContactPage />
+      },
+      {
+        path: "/terms-conditions",
+        element: <TermsAndCondition />
       }
     ],
   },

@@ -64,7 +64,7 @@ const Portfolio = () => {
 
   return (
     <div className="container mx-auto w-full lg:w-10/12 py-12">
-      <div className="flex justify-center gap-2 my-4">
+      <div className="flex flex-wrap justify-center gap-2 my-4">
         {tab.map((item, index) => (
           <button
             key={index}
@@ -86,7 +86,7 @@ const Portfolio = () => {
         {filteredServices.map((service, index) => (
           <div
             key={index}
-            className="max-w-sm shadow-lg border overflow-hidden"
+            className="shadow-lg border overflow-hidden"
           >
             {/* Image Section */}
             <img

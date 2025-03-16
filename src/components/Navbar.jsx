@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-white shadow-md w-full">
+    <div className="bg-white shadow-md w-full top-0 sticky !z-50">
       <div className="w-full lg:w-10/12 mx-auto py-3 flex justify-between items-center px-4">
         {/* Logo */}
         <Link to="/">
