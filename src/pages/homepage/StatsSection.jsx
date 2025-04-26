@@ -7,7 +7,7 @@ const stats = [
   { value: 150, label: "Working Persons" },
   { value: 175, label: "Projects Completed" },
   { value: 150, label: "Happy Clients" },
-  { value: 120, label: "Running" },
+  { value: 20, label: "Running" },
 ];
 
 const StatsSection = () => {

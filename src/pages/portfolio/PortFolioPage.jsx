@@ -4,7 +4,7 @@ import Portfolio from './Portfolio';
 
 const PortFolioPage = () => {
     return (
-        <div>
+        <div className='px-1.5'>
             <PortfolioBannar />
             <Portfolio />
         </div>

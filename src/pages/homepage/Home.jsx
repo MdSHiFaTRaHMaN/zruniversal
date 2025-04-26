@@ -12,17 +12,17 @@ import RecentPosts from './RecentPosts';
 
 const Home = () => {
     return (
-        <div>
+        <div className='px-1.5'>
             <Bannar />
-            <WhyChooseUs />
-            <Services />
             <Portfolio />
+            {/* <Services /> */}
             <TeamSection />
             <TestimonialSection />
-            <FAQSection />
             <StatsSection />
             <PhotoGallery />
+            <WhyChooseUs />
             <RecentPosts />
+            <FAQSection />
         </div>
     );
 };

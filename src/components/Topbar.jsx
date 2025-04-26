@@ -6,15 +6,15 @@ import { MdEmail } from "react-icons/md";
 const Topbar = () => {
   return (
     <div className="bg-[#203B63] py-4 hidden lg:block">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 text-white">
+      <div className="container w-10/12 mx-auto flex flex-col md:flex-row items-center justify-between px-4 text-white">
         <div className="flex flex-col md:flex-row items-center gap-0 lg:gap-5 text-sm">
           <span className="flex items-center gap-2">
             <MdEmail className="text-lg" />
-            <h3>universalbuildernyc@gmail.com </h3>
+            <h3>contact@zruniversal.com</h3>
           </span>
           <span className="flex items-center gap-2">
             <FaPhoneAlt className="text-lg" />
-            <h3>0646 725 4245</h3>
+            <h3>646 725 4245</h3>
           </span>
         </div>
         <div className="flex items-center gap-4 mt-3 md:mt-0 text-lg">

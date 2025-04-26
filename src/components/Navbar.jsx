@@ -1,81 +1,96 @@
-import { Menu } from "antd";
-import { useState } from "react";
-import { HomeOutlined, MenuOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Drawer, Button } from "antd";
+import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
+import { FaShoppingCart } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom"; // import useLocation
+import Logo from "../assets/znlogo.png";
 
 const Navbar = () => {
-  const [current, setCurrent] = useState("home");
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const location = useLocation(); // get current path
 
-  const handleClick = (e) => {
-    setCurrent(e.key);
-    setMobileOpen(false); // Close mobile menu on item click
-  };
+  const menuItems = [
+    { name: "HOME", link: "/" },
+    { name: "SERVICE", link: "/services" },
+    { name: "GALLERY", link: "/gallery" },
+    { name: "CONTACT", link: "/contact" },
+  ];
 
   return (
-    <div className="bg-white shadow-md w-full top-0 sticky !z-50">
-      <div className="w-full lg:w-10/12 mx-auto py-3 flex justify-between items-center px-4">
-        {/* Logo */}
-        <Link to="/">
-          <div className="flex items-center space-x-2">
-            <HomeOutlined className="text-yellow-500 text-2xl" />
-            <h1 className="text-2xl font-bold text-blue-900 mt-2">
-              Znuniversal
-            </h1>
+    <div className="bg-white shadow-md w-full sticky top-0 z-50">
+      <nav className="relative bg-white shadow w-full lg:w-10/12 mx-auto">
+        <div className="container mx-auto px-6 lg:px-0 py-4 flex justify-between items-center">
+          {/* Logo */}
+          <Link
+            to="/"
+            className="flex items-center gap-1 text-2xl font-semibold"
+          >
+            <img className="h-7" src={Logo} alt="Logo" /> Zruniversal
+          </Link>
+
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex items-center">
+            <div className="flex gap-6 mr-6">
+              {menuItems.map((item, idx) => (
+                <Link
+                  key={idx}
+                  to={item.link}
+                  className={`font-semibold transition ${
+                    location.pathname === item.link
+                      ? "text-blue-500"
+                      : "text-gray-700 hover:text-blue-500"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
           </div>
-        </Link>
 
-        {/* Desktop Navigation */}
-        <Menu
-          onClick={handleClick}
-          selectedKeys={[current]}
-          mode="horizontal"
-          className="hidden md:flex border-none text-blue-900 font-semibold"
-        >
-          <Menu.Item key="home">
-            <Link to="/">HOME</Link>
-          </Menu.Item>
-          <Menu.Item key="service">
-            <Link to="/services">SERVICE</Link>
-          </Menu.Item>
-          <Menu.Item key="portfolio">
-            <Link to="/portfolio">PORTFOLIO</Link>
-          </Menu.Item>
-          <Menu.Item key="contact">
-            <Link to="/contact">CONTACT</Link>
-          </Menu.Item>
-        </Menu>
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden">
+            <Button
+              type="text"
+              icon={<MenuOutlined style={{ fontSize: "24px" }} />}
+              onClick={() => setIsDrawerOpen(true)}
+            />
+          </div>
 
-        {/* Mobile Menu Button */}
-        <div
-          className="md:hidden cursor-pointer"
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
-          <MenuOutlined className="text-2xl text-blue-900" />
+          {/* Ant Design Drawer */}
+          <Drawer
+            title={
+              <div className="flex justify-between items-center">
+                <span className="text-lg font-bold">Menu</span>
+                <Button
+                  type="text"
+                  icon={<CloseOutlined />}
+                  onClick={() => setIsDrawerOpen(false)}
+                />
+              </div>
+            }
+            placement="right"
+            closeIcon={false}
+            open={isDrawerOpen}
+          >
+            <div className="flex flex-col space-y-4">
+              {menuItems.map((item, idx) => (
+                <Link
+                  key={idx}
+                  to={item.link}
+                  className={`font-semibold transition ${
+                    location.pathname === item.link
+                      ? "text-blue-500"
+                      : "text-gray-700 hover:text-blue-500"
+                  }`}
+                  onClick={() => setIsDrawerOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </Drawer>
         </div>
-      </div>
-
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <Menu
-          onClick={handleClick}
-          mode="vertical"
-          className="md:hidden bg-white shadow-lg w-full text-center"
-        >
-          <Menu.Item key="home">
-            <Link to="/">HOME</Link>
-          </Menu.Item>
-          <Menu.Item key="service">
-            <Link to="/services">SERVICE</Link>
-          </Menu.Item>
-          <Menu.Item key="portfolio">
-            <Link to="/portfolio">PORTFOLIO</Link>
-          </Menu.Item>
-          <Menu.Item key="contact">
-            <Link to="/contact">CONTACT</Link>
-          </Menu.Item>
-        </Menu>
-      )}
+      </nav>
     </div>
   );
 };

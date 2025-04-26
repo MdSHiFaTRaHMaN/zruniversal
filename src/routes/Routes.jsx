@@ -5,6 +5,7 @@ import ServicePage from "../pages/services/ServicePage";
 import PortFolioPage from "../pages/portfolio/PortFolioPage";
 import ContactPage from "../pages/contact/ContactPage";
 import TermsAndCondition from "../pages/termsandconditions/TermsAndCondition";
+import GalleryPage from "../pages/gallery/GalleryPage";
 
 
 const Routes = createBrowserRouter([
@@ -19,6 +20,10 @@ const Routes = createBrowserRouter([
       {
         path: "/services",
         element: <ServicePage />
+      },
+      {
+        path: "/gallery",
+        element: <GalleryPage />
       },
       {
         path: "/portfolio",

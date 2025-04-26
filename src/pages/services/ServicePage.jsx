@@ -4,7 +4,7 @@ import Services from './Services';
 
 const ServicePage = () => {
     return (
-        <div>
+        <div className='px-1.5'>
             <ServiceBannar />
             <Services />
         </div>

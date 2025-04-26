@@ -1,58 +1,85 @@
 import { useState } from "react";
-import Service1 from "../../assets/ser1.jpg";
-import Service2 from "../../assets/ser2.jpg";
-import Service3 from "../../assets/ser3.jpg";
-import Service4 from "../../assets/ser4.jpg";
-import Service5 from "../../assets/ser5.jpg";
-import Service6 from "../../assets/ser6.jpg";
+import Service1 from "../../assets/services/Services1.jpeg";
+import Service2 from "../../assets/services/services2.png";
+import Service3 from "../../assets/services/service3.jpg";
+import Service4 from "../../assets/services/services4.jpg";
+import Service5 from "../../assets/services/services5.png";
+import Service6 from "../../assets/services/services6.png";
+import Service7 from "../../assets/services/services7.jpg";
+import Service8 from "../../assets/services/services8.jpg";
+
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 const services = [
   {
-    title: "Corporate Work 1",
-    category: "CORPORATE",
+    title: "Restoration Services",
+    category: "RESTORATION",
     description:
-      "Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has. Latine propriae quo no, unum ridens.",
+      "We restore buildings to their former glory while preserving structural integrity and historical charm.",
     image: Service1,
   },
   {
-    title: "Engineering Work 2",
-    category: "ENGINEERING",
+    title: "Waterproofing Solutions",
+    category: "WATERPROOFING",
     description:
-      "Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has. Latine propriae quo no, unum ridens.",
+      "Protect your structure from water damage with advanced waterproofing systems tailored for long-term results.",
     image: Service2,
   },
   {
-    title: "Corporate Work 2",
-    category: "CORPORATE",
+    title: "Roofing & Painting",
+    category: "ROOFING",
     description:
-      "Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has. Latine propriae quo no, unum ridens.",
+      "From durable roofing systems to professional-grade painting, we enhance your property’s durability and appearance.",
     image: Service3,
   },
   {
-    title: "Engineering Work 1",
-    category: "ENGINEERING",
+    title: "High-Pressure Cleaning",
+    category: "CLEANING",
     description:
-      "Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has. Latine propriae quo no, unum ridens.",
+      "Restore surfaces with powerful, eco-friendly pressure cleaning for walls, roofs, and exterior spaces.",
     image: Service4,
   },
   {
-    title: "Business Work 1",
-    category: "BUSINESS",
+    title: "Brownstone Renovation",
+    category: "BROWNSTONE",
     description:
-      "Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has. Latine propriae quo no, unum ridens.",
+      "Specialized in brownstone façade repair and restoration, keeping the classic NYC charm intact.",
     image: Service5,
   },
   {
-    title: "Consulting Work 1",
-    category: "CONSULTING",
+    title: "Stucco & Brick Pointing",
+    category: "MASONRY",
     description:
-      "Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has. Latine propriae quo no, unum ridens.",
+      "Revitalize your building with clean, sharp masonry work — from stucco refinishing to expert brick pointing.",
     image: Service6,
+  },
+  {
+    title: "Foundation Repair",
+    category: "FOUNDATION",
+    description:
+      "Ensure long-term safety and stability with expert foundation inspections, repairs, and reinforcement solutions.",
+    image: Service7,
+  },
+  {
+    title: "Demolition & Excavation",
+    category: "DEMOLITION",
+    description:
+      "Safe, efficient demolition and excavation services with proper permits and environmental compliance.",
+    image: Service8,
   },
 ];
 
-const tab = ["ALL", "CORPORATE", "BUSINESS", "ENGINEERING", "CONSULTING"];
+const tab = [
+  "ALL",
+  "RESTORATION",
+  "WATERPROOFING",
+  "ROOFING",
+  "CLEANING",
+  "BROWNSTONE",
+  "MASONRY",
+  "FOUNDATION",
+  "DEMOLITION",
+];
 
 const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState("ALL");
@@ -84,10 +111,7 @@ const Portfolio = () => {
       {/* Services Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredServices.map((service, index) => (
-          <div
-            key={index}
-            className="shadow-lg border overflow-hidden"
-          >
+          <div key={index} className="shadow-lg border overflow-hidden">
             {/* Image Section */}
             <img
               src={service.image}

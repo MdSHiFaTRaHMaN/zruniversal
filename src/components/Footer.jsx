@@ -8,24 +8,27 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-3">About Us</h3>
           <p className="text-gray-300 text-sm">
-            Lorem ipsum dolor sit amet, omnis signiferumque in mei, mei ex enim concludaturque. Senserit salutandi euripidis no per, modus maiestatis scribentur est an.
+            Zruniversal is a trusted name in the construction and renovation
+            industry, known for delivering top-quality workmanship with
+            integrity. From residential projects to commercial builds, we are
+            committed to excellence, safety, and client satisfaction.
           </p>
         </div>
         <div>
           <h3 className="text-lg font-semibold mb-3">Latest News</h3>
           <ul className="text-gray-300 text-sm space-y-2 border-t border-gray-500 pt-2">
-            <li>aaa</li>
-            <li>Tollit cetero cu usu, etiam evertitur id nec</li>
-            <li>Ad qui quem reprimique, quo possit detracto</li>
+            <li>New project launch in Brooklyn Heights</li>
+            <li>Zruniversal awarded Safety Excellence 2025</li>
+            <li>Eco-friendly materials in modern construction</li>
           </ul>
         </div>
         <div>
           <h3 className="text-lg font-semibold mb-3">Popular News</h3>
           <ul className="text-gray-300 text-sm space-y-2 border-t border-gray-500 pt-2">
-            <li>Detracto contentiones te est, brute ipsum</li>
-            <li>Ex usu vero quaerendum, mei no falli</li>
-            <li>Liber utroque vim an amet Latine sa</li>
-            <li>Tollit cetero cu usu, etiam evertitur id nec</li>
+            <li>5 Signs Your Property Needs Restoration</li>
+            <li>How Waterproofing Extends Building Life</li>
+            <li>Brownstone Revival: A NYC Specialty</li>
+            <li>Top Trends in Urban Construction 2025</li>
           </ul>
         </div>
         <div>
